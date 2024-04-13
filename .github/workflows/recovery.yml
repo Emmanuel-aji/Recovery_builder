@@ -15,7 +15,9 @@ jobs:
             sudo apt update && sudo apt install wget zip
             wget -qO - https://github.com/SA-17/Recovery_builder/raw/main/scripts/cleanup.sh  | bash
             sudo -E apt-get -qq update
-            sudo -E apt-get -qq install bc build-essential tar zip curl libstdc++6 git wget python gcc clang libssl-dev repo rsync flex curl  bison aria2
+            sudo -E apt-get -qq install bc build-essential tar zip curl libstdc++6 git wget python2.7 gcc clang libssl-dev repo rsync flex curl  bison aria2
+            sudo apt remove python3
+            sudo ln -s /usr/bin/python2.7 /usr/bin/python
             sudo curl --create-dirs -L -o /usr/local/bin/repo -O -L https://storage.googleapis.com/git-repo-downloads/repo
             sudo chmod a+rx /usr/local/bin/repo
 
